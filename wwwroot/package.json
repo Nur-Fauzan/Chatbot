@@ -1,0 +1,11 @@
+{
+    "name": "chatbot",
+    "version": "24.7.2",
+    "description": "chatbot",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "private": true,
+    "dependencies": {},
+    "engines": {
+        "node": ">=18"
+    }
+}

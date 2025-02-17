@@ -1,0 +1,140 @@
+@{
+    // View
+    View = this;
+
+    // Check action result
+    if (questionEdit.ActionResult is EmptyResult) // Terminate page
+        return;
+
+    // Layout
+    Layout = questionEdit.UseLayout ? "_Layout" : "";
+}
+@questionEdit.ShowPageHeader()
+@questionEdit.ShowMessages()
+<main class="edit">
+<form name="fQuestionedit" id="fQuestionedit" class="@(questionEdit.FormClassName)" action="@AppPath(CurrentPageName())" method="post" novalidate autocomplete="off">
+<script>
+var currentTable = @Html.Raw(ConvertToJson(questionEdit.ToClientVar()));
+ew.deepAssign(ew.vars, { tables: { Question: currentTable } });
+var currentPageID = ew.PAGE_ID = "edit";
+var currentForm;
+var fQuestionedit;
+loadjs.ready(["wrapper", "head"], function () {
+    let $ = jQuery;
+    let fields = currentTable.fields;
+
+    // Form object
+    let form = new ew.FormBuilder()
+        .setId("fQuestionedit")
+        .setPageId("edit")
+
+        // Add fields
+        .setFields([
+
+            ["Question2", [fields.Question2.visible && fields.Question2.required ? ew.Validators.required(fields.Question2.caption) : null], fields.Question2.isInvalid],
+            ["Answer", [fields.Answer.visible && fields.Answer.required ? ew.Validators.required(fields.Answer.caption) : null], fields.Answer.isInvalid],
+            ["Tag", [fields.Tag.visible && fields.Tag.required ? ew.Validators.required(fields.Tag.caption) : null], fields.Tag.isInvalid]
+        ])
+
+        // Form_CustomValidate
+        .setCustomValidate(
+            function(fobj) { // DO NOT CHANGE THIS LINE!
+                    // Your custom validation code here, return false if invalid.
+                    return true;
+                }
+        )
+
+        // Use JavaScript validation or not
+        .setValidateRequired(ew.CLIENT_VALIDATE)
+
+        // Dynamic selection lists
+        .setLists({
+        })
+        .build();
+    window[form.id] = form;
+    currentForm = form;
+    loadjs.done(form.id);
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+    // Write your client script here, no need to add script tags.
+});
+</script>
+@if (CurrentPage?.CheckToken ?? false) {
+    <input type="hidden" name="@Config.TokenNameKey" value="@Config.TokenName"><!-- CSRF token name -->
+    @Html.AntiForgeryToken()
+}
+<input type="hidden" name="action" id="action" value="update">
+<input type="hidden" name="modal" value="@ConvertToInt(questionEdit.IsModal)">
+@if (IsJsonResponse()) {
+<input type="hidden" name="json" value="1">
+}
+<input type="hidden" name="@(questionEdit.OldKeyName)" value="@Html.Raw(questionEdit.OldKey)">
+<div class="ew-edit-div"><!-- page* -->
+@if (questionEdit.Question2.Visible) { // questionEdit.Question2.Visible (begin)
+    <div id="r_Question2" @Html.Raw(questionEdit.Question2.RowAttributes)>
+        <label id="elh_Question_Question2" for="x_Question2" class="@(questionEdit.LeftColumnClass)">@Html.Raw(questionEdit.Question2.Caption)@Html.Raw(questionEdit.Question2.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+        <div class="@(questionEdit.RightColumnClass)"><div @Html.Raw(questionEdit.Question2.CellAttributes)>
+<span id="el_Question_Question2">
+<input type="@(questionEdit.Question2.InputTextType)" name="x_Question2" id="x_Question2" data-table="Question" data-field="x_Question2" value="@Html.Raw(questionEdit.Question2.EditValue)" size="30" maxlength="255" placeholder="@Html.Raw(HtmlEncode(questionEdit.Question2.PlaceHolder))" data-format-pattern="@(questionEdit.Question2.FormatPattern)"@Html.Raw(questionEdit.Question2.EditAttributes) aria-describedby="x_Question2_help">
+@Html.Raw(questionEdit.Question2.GetCustomMessage)
+<div class="invalid-feedback">@Html.Raw(questionEdit.Question2.GetErrorMessage())</div>
+</span>
+</div></div>
+    </div>
+} @* questionEdit.Question2.Visible (end) *@
+@if (questionEdit.Answer.Visible) { // questionEdit.Answer.Visible (begin)
+    <div id="r_Answer" @Html.Raw(questionEdit.Answer.RowAttributes)>
+        <label id="elh_Question_Answer" for="x_Answer" class="@(questionEdit.LeftColumnClass)">@Html.Raw(questionEdit.Answer.Caption)@Html.Raw(questionEdit.Answer.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+        <div class="@(questionEdit.RightColumnClass)"><div @Html.Raw(questionEdit.Answer.CellAttributes)>
+<span id="el_Question_Answer">
+<textarea data-table="Question" data-field="x_Answer" name="x_Answer" id="x_Answer" cols="35" rows="4" placeholder="@Html.Raw(HtmlEncode(questionEdit.Answer.PlaceHolder))"@Html.Raw(questionEdit.Answer.EditAttributes) aria-describedby="x_Answer_help">@(questionEdit.Answer.EditValue)</textarea>
+@Html.Raw(questionEdit.Answer.GetCustomMessage)
+<div class="invalid-feedback">@Html.Raw(questionEdit.Answer.GetErrorMessage())</div>
+</span>
+</div></div>
+    </div>
+} @* questionEdit.Answer.Visible (end) *@
+@if (questionEdit.Tag.Visible) { // questionEdit.Tag.Visible (begin)
+    <div id="r_Tag" @Html.Raw(questionEdit.Tag.RowAttributes)>
+        <label id="elh_Question_Tag" for="x_Tag" class="@(questionEdit.LeftColumnClass)">@Html.Raw(questionEdit.Tag.Caption)@Html.Raw(questionEdit.Tag.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+        <div class="@(questionEdit.RightColumnClass)"><div @Html.Raw(questionEdit.Tag.CellAttributes)>
+<span id="el_Question_Tag">
+<input type="@(questionEdit.Tag.InputTextType)" name="x_Tag" id="x_Tag" data-table="Question" data-field="x_Tag" value="@Html.Raw(questionEdit.Tag.EditValue)" size="30" maxlength="50" placeholder="@Html.Raw(HtmlEncode(questionEdit.Tag.PlaceHolder))" data-format-pattern="@(questionEdit.Tag.FormatPattern)"@Html.Raw(questionEdit.Tag.EditAttributes) aria-describedby="x_Tag_help">
+@Html.Raw(questionEdit.Tag.GetCustomMessage)
+<div class="invalid-feedback">@Html.Raw(questionEdit.Tag.GetErrorMessage())</div>
+</span>
+</div></div>
+    </div>
+} @* questionEdit.Tag.Visible (end) *@
+</div><!-- /page* -->
+    <input type="hidden" data-table="Question" data-field="x_ID" data-hidden="1" name="x_ID" id="x_ID" value="@Html.Raw(HtmlEncode(questionEdit.ID.CurrentValue))">
+@{ questionEdit.CloseRecordset(); }
+@Html.Raw(questionEdit.IsModal ? "<template class=\"ew-modal-buttons\">" : "<div class=\"row ew-buttons\">")<!-- buttons .row -->
+    <div class="@(questionEdit.OffsetColumnClass)"><!-- buttons offset -->
+    <button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit" form="fQuestionedit">@Html.Raw(Language.Phrase("SaveBtn"))</button>
+@if (IsJsonResponse()) {
+    <button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-bs-dismiss="modal">@Html.Raw(Language.Phrase("CancelBtn"))</button>
+} else {
+    <button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" form="fQuestionedit" data-href="@AppPath(questionEdit.ReturnUrl)">@Html.Raw(Language.Phrase("CancelBtn"))</button>
+}
+    </div><!-- /buttons offset -->
+@Html.Raw(questionEdit.IsModal ? "</template>" : "</div>")<!-- /buttons .row -->
+</form>
+</main>
+@questionEdit.ShowPageFooter()
+@Html.Raw(GetDebugMessage())
+@ElapsedTime()
+<script>
+// Field event handlers
+loadjs.ready("head", function() {
+    ew.addEventHandlers("Question");
+});
+</script>
+<script>
+loadjs.ready("load", function() {
+    // Write your table-specific startup script here
+    // document.write("page loaded");
+});
+</script>

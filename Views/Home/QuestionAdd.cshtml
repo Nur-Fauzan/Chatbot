@@ -1,0 +1,114 @@
+@{
+    // View
+    View = this;
+
+    // Check action result
+    if (questionAdd.ActionResult is EmptyResult) // Terminate page
+        return;
+
+    // Layout
+    Layout = questionAdd.UseLayout ? "_Layout" : "";
+}
+<script>
+var currentTable = @Html.Raw(ConvertToJson(questionAdd.ToClientVar()));
+ew.deepAssign(ew.vars, { tables: { Question: currentTable } });
+var currentPageID = ew.PAGE_ID = "add";
+var currentForm;
+var fQuestionadd;
+loadjs.ready(["wrapper", "head"], function () {
+    let $ = jQuery;
+    let fields = currentTable.fields;
+
+    // Form object
+    let form = new ew.FormBuilder()
+        .setId("fQuestionadd")
+        .setPageId("add")
+
+        // Add fields
+        .setFields([
+
+            ["Question2", [fields.Question2.visible && fields.Question2.required ? ew.Validators.required(fields.Question2.caption) : null], fields.Question2.isInvalid],
+            ["Answer", [fields.Answer.visible && fields.Answer.required ? ew.Validators.required(fields.Answer.caption) : null], fields.Answer.isInvalid],
+            ["Tag", [fields.Tag.visible && fields.Tag.required ? ew.Validators.required(fields.Tag.caption) : null], fields.Tag.isInvalid]
+        ])
+
+        // Form_CustomValidate
+        .setCustomValidate(
+            function(fobj) { // DO NOT CHANGE THIS LINE!
+                    // Your custom validation code here, return false if invalid.
+                    return true;
+                }
+        )
+
+        // Use JavaScript validation or not
+        .setValidateRequired(ew.CLIENT_VALIDATE)
+
+        // Dynamic selection lists
+        .setLists({
+        })
+        .build();
+    window[form.id] = form;
+    currentForm = form;
+    loadjs.done(form.id);
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+    // Write your client script here, no need to add script tags.
+});
+</script>
+@questionAdd.ShowPageHeader()
+@questionAdd.ShowMessages()
+<form name="fQuestionadd" id="fQuestionadd" class="@(questionAdd.FormClassName)" action="@AppPath(CurrentPageName())" method="post" novalidate autocomplete="off">
+@if (CurrentPage?.CheckToken ?? false) {
+    <input type="hidden" name="@Config.TokenNameKey" value="@Config.TokenName"><!-- CSRF token name -->
+    @Html.AntiForgeryToken()
+}
+<input type="hidden" name="action" id="action" value="insert">
+<input type="hidden" name="modal" value="@ConvertToInt(questionAdd.IsModal)">
+@if (IsJsonResponse()) {
+<input type="hidden" name="json" value="1">
+}
+<input type="hidden" name="@(questionAdd.OldKeyName)" value="@Html.Raw(questionAdd.OldKey)">
+<div class="ew-add-div"><!-- page* -->
+</div><!-- /page* -->
+@{ questionAdd.CloseRecordset(); }
+@Html.Raw(questionAdd.IsModal ? "<template class=\"ew-modal-buttons\">" : "<div class=\"row ew-buttons\">")<!-- buttons .row -->
+    <div class="@(questionAdd.OffsetColumnClass)"><!-- buttons offset -->
+@if (IsJsonResponse()) {
+    <button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-bs-dismiss="modal">Back</button>
+} else {
+    <button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" form="fQuestionadd" data-href="@AppPath(questionAdd.ReturnUrl)">Back</button>
+}
+    </div><!-- /buttons offset -->
+@Html.Raw(questionAdd.IsModal ? "</template>" : "</div>")<!-- /buttons .row -->
+</form>
+@questionAdd.ShowPageFooter()
+@Html.Raw(GetDebugMessage())
+@ElapsedTime()
+<script>
+// Field event handlers
+loadjs.ready("head", function() {
+    ew.addEventHandlers("Question");
+});
+</script>
+<script>
+loadjs.ready("load", function() {
+    // Write your table-specific startup script here
+    // document.write("page loaded");
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the <h1> element
+    const h1Element = document.querySelector('h1.m-0.text-dark');
+    
+    // Update the text content of the main heading
+    h1Element.firstChild.textContent = 'ERROR ';
+    
+    // Update the text content of the <small> element
+    const smallElement = h1Element.querySelector('small.text-body-secondary');
+    if (smallElement) {
+        smallElement.textContent = 'Currently Add function is disabled';
+    }
+});
+
+</script>

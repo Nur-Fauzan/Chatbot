@@ -1,0 +1,821 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\chatbot\\wwwroot\\__pycache__\\chatbot_predict.cpython-39.pyc",
+      "PackagePath": "staticwebassets\\__pycache__\\chatbot_predict.cpython-39.pyc"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\css\\adminlte.css",
+      "PackagePath": "staticwebassets\\adminlte3\\css\\adminlte.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\css\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\adminlte3\\css\\adminlte.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\css\\adminlte.min.css.map",
+      "PackagePath": "staticwebassets\\adminlte3\\css\\adminlte.min.css.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\js\\adminlte.js",
+      "PackagePath": "staticwebassets\\adminlte3\\js\\adminlte.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\js\\adminlte.js.map",
+      "PackagePath": "staticwebassets\\adminlte3\\js\\adminlte.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\js\\adminlte.min.js",
+      "PackagePath": "staticwebassets\\adminlte3\\js\\adminlte.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\adminlte3\\js\\adminlte.min.js.map",
+      "PackagePath": "staticwebassets\\adminlte3\\js\\adminlte.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\bootstrap5\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\bootstrap5\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\bootstrap5\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\bootstrap5\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\bootstrap5\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\bootstrap5\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\bootstrap5\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap5\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_predict.py",
+      "PackagePath": "staticwebassets\\chatbot_predict.py"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\config.json",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\config.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\merges.txt",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\merges.txt"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\model.safetensors",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\model.safetensors"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\special_tokens_map.json",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\special_tokens_map.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\tokenizer.json",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\tokenizer.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\tokenizer_config.json",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\tokenizer_config.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\training_args.bin",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\training_args.bin"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\chatbot_roberta\\vocab.json",
+      "PackagePath": "staticwebassets\\chatbot_roberta\\vocab.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\colorbox.css",
+      "PackagePath": "staticwebassets\\colorbox\\colorbox.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\images\\border.png",
+      "PackagePath": "staticwebassets\\colorbox\\images\\border.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\images\\controls.png",
+      "PackagePath": "staticwebassets\\colorbox\\images\\controls.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\colorbox\\images\\loading.gif"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\images\\loading_background.png",
+      "PackagePath": "staticwebassets\\colorbox\\images\\loading_background.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\images\\overlay.png",
+      "PackagePath": "staticwebassets\\colorbox\\images\\overlay.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\jquery.colorbox-min.js",
+      "PackagePath": "staticwebassets\\colorbox\\jquery.colorbox-min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\jquery.colorbox.js",
+      "PackagePath": "staticwebassets\\colorbox\\jquery.colorbox.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\jquery.colorbox.min.js",
+      "PackagePath": "staticwebassets\\colorbox\\jquery.colorbox.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\colorbox\\jquery.colorbox.min.js.map",
+      "PackagePath": "staticwebassets\\colorbox\\jquery.colorbox.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\OverlayScrollbars.css",
+      "PackagePath": "staticwebassets\\css\\OverlayScrollbars.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\OverlayScrollbars.min.css",
+      "PackagePath": "staticwebassets\\css\\OverlayScrollbars.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\chatbot.css",
+      "PackagePath": "staticwebassets\\css\\chatbot.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\chatbot.min.css",
+      "PackagePath": "staticwebassets\\css\\chatbot.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\chatbot.min.css.map",
+      "PackagePath": "staticwebassets\\css\\chatbot.min.css.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\chatbot.scss",
+      "PackagePath": "staticwebassets\\css\\chatbot.scss"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\cropper.css",
+      "PackagePath": "staticwebassets\\css\\cropper.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\cropper.min.css",
+      "PackagePath": "staticwebassets\\css\\cropper.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\fonts\\ew.eot",
+      "PackagePath": "staticwebassets\\css\\fonts\\ew.eot"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\fonts\\ew.svg",
+      "PackagePath": "staticwebassets\\css\\fonts\\ew.svg"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\fonts\\ew.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\ew.ttf"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\fonts\\ew.woff",
+      "PackagePath": "staticwebassets\\css\\fonts\\ew.woff"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\jquery.fileupload-ui.css",
+      "PackagePath": "staticwebassets\\css\\jquery.fileupload-ui.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\jquery.fileupload.css",
+      "PackagePath": "staticwebassets\\css\\jquery.fileupload.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\query-builder.css",
+      "PackagePath": "staticwebassets\\css\\query-builder.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\query-builder.min.css",
+      "PackagePath": "staticwebassets\\css\\query-builder.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\query-builder.min.css.map",
+      "PackagePath": "staticwebassets\\css\\query-builder.min.css.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\query-builder.scss",
+      "PackagePath": "staticwebassets\\css\\query-builder.scss"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\select2-bootstrap5.css",
+      "PackagePath": "staticwebassets\\css\\select2-bootstrap5.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\select2-bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\css\\select2-bootstrap5.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\select2.css",
+      "PackagePath": "staticwebassets\\css\\select2.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\css\\select2.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tabulator_bootstrap5.css",
+      "PackagePath": "staticwebassets\\css\\tabulator_bootstrap5.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tabulator_bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\css\\tabulator_bootstrap5.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tabulator_bootstrap5.min.css.map",
+      "PackagePath": "staticwebassets\\css\\tabulator_bootstrap5.min.css.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tabulator_bootstrap5.scss",
+      "PackagePath": "staticwebassets\\css\\tabulator_bootstrap5.scss"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tempus-dominus.css",
+      "PackagePath": "staticwebassets\\css\\tempus-dominus.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tempus-dominus.min.css",
+      "PackagePath": "staticwebassets\\css\\tempus-dominus.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tempus-dominus.min.css.map",
+      "PackagePath": "staticwebassets\\css\\tempus-dominus.min.css.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\css\\tempus-dominus.scss",
+      "PackagePath": "staticwebassets\\css\\tempus-dominus.scss"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\images\\logo_loginpage.png",
+      "PackagePath": "staticwebassets\\images\\logo_loginpage.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\images\\png-transparent-kalimantan-institute-of-technolgy-logo-universities-indonesia.png",
+      "PackagePath": "staticwebassets\\images\\png-transparent-kalimantan-institute-of-technolgy-logo-universities-indonesia.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\images\\pngwing.com (1).png",
+      "PackagePath": "staticwebassets\\images\\pngwing.com (1).png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\MobileDetect.json",
+      "PackagePath": "staticwebassets\\js\\MobileDetect.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chart.umd.js",
+      "PackagePath": "staticwebassets\\js\\chart.umd.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chart.umd.js.map",
+      "PackagePath": "staticwebassets\\js\\chart.umd.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-adapter-luxon.umd.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-adapter-luxon.umd.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-adapter-luxon.umd.min.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-adapter-luxon.umd.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-plugin-annotation.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-plugin-annotation.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-plugin-annotation.min.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-plugin-annotation.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-plugin-datalabels.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-plugin-datalabels.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-plugin-datalabels.min.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-plugin-datalabels.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\chartjs-plugin-stacked100.js",
+      "PackagePath": "staticwebassets\\js\\chartjs-plugin-stacked100.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\cropper.js",
+      "PackagePath": "staticwebassets\\js\\cropper.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\cropper.min.js",
+      "PackagePath": "staticwebassets\\js\\cropper.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\element-internals-polyfill.js",
+      "PackagePath": "staticwebassets\\js\\element-internals-polyfill.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\element-internals-polyfill.min.js",
+      "PackagePath": "staticwebassets\\js\\element-internals-polyfill.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\element-internals-polyfill.min.js.map",
+      "PackagePath": "staticwebassets\\js\\element-internals-polyfill.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ew.js",
+      "PackagePath": "staticwebassets\\js\\ew.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ew.min.js",
+      "PackagePath": "staticwebassets\\js\\ew.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ew.min.js.map",
+      "PackagePath": "staticwebassets\\js\\ew.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewchart.js",
+      "PackagePath": "staticwebassets\\js\\ewchart.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewcore.js",
+      "PackagePath": "staticwebassets\\js\\ewcore.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewcore.min.js",
+      "PackagePath": "staticwebassets\\js\\ewcore.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewcore.min.js.map",
+      "PackagePath": "staticwebassets\\js\\ewcore.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewdatetimepicker.js",
+      "PackagePath": "staticwebassets\\js\\ewdatetimepicker.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewdatetimepicker.min.js",
+      "PackagePath": "staticwebassets\\js\\ewdatetimepicker.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\ewdatetimepicker.min.js.map",
+      "PackagePath": "staticwebassets\\js\\ewdatetimepicker.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jquery-ui.js",
+      "PackagePath": "staticwebassets\\js\\jquery-ui.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-ui.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\js\\jquery.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jquery.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jqueryfileupload.js",
+      "PackagePath": "staticwebassets\\js\\jqueryfileupload.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jqueryfileupload.min.js",
+      "PackagePath": "staticwebassets\\js\\jqueryfileupload.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jqueryfileupload.min.js.map",
+      "PackagePath": "staticwebassets\\js\\jqueryfileupload.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jsrender.js",
+      "PackagePath": "staticwebassets\\js\\jsrender.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jsrender.min.js",
+      "PackagePath": "staticwebassets\\js\\jsrender.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\jsrender.min.js.map",
+      "PackagePath": "staticwebassets\\js\\jsrender.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\load-image.all.js",
+      "PackagePath": "staticwebassets\\js\\load-image.all.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\load-image.all.min.js",
+      "PackagePath": "staticwebassets\\js\\load-image.all.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\load-image.all.min.js.map",
+      "PackagePath": "staticwebassets\\js\\load-image.all.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\locales.json",
+      "PackagePath": "staticwebassets\\js\\locales.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\luxon.js",
+      "PackagePath": "staticwebassets\\js\\luxon.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\luxon.js.map",
+      "PackagePath": "staticwebassets\\js\\luxon.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\luxon.min.js",
+      "PackagePath": "staticwebassets\\js\\luxon.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\luxon.min.js.map",
+      "PackagePath": "staticwebassets\\js\\luxon.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\mobile-detect.js",
+      "PackagePath": "staticwebassets\\js\\mobile-detect.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\mobile-detect.min.js",
+      "PackagePath": "staticwebassets\\js\\mobile-detect.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pGenerator.jquery.js",
+      "PackagePath": "staticwebassets\\js\\pGenerator.jquery.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pGenerator.jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\pGenerator.jquery.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pGenerator.jquery.min.js.map",
+      "PackagePath": "staticwebassets\\js\\pGenerator.jquery.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pStrength.jquery.js",
+      "PackagePath": "staticwebassets\\js\\pStrength.jquery.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pStrength.jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\pStrength.jquery.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pStrength.jquery.min.js.map",
+      "PackagePath": "staticwebassets\\js\\pStrength.jquery.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pace.js",
+      "PackagePath": "staticwebassets\\js\\pace.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pace.min.js",
+      "PackagePath": "staticwebassets\\js\\pace.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pdfobject.js",
+      "PackagePath": "staticwebassets\\js\\pdfobject.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\pdfobject.min.js",
+      "PackagePath": "staticwebassets\\js\\pdfobject.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\popper.js",
+      "PackagePath": "staticwebassets\\js\\popper.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\popper.js.map",
+      "PackagePath": "staticwebassets\\js\\popper.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\popper.min.js.map",
+      "PackagePath": "staticwebassets\\js\\popper.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\purify.js",
+      "PackagePath": "staticwebassets\\js\\purify.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\purify.js.map",
+      "PackagePath": "staticwebassets\\js\\purify.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\purify.min.js",
+      "PackagePath": "staticwebassets\\js\\purify.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\purify.min.js.map",
+      "PackagePath": "staticwebassets\\js\\purify.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\query-builder.js",
+      "PackagePath": "staticwebassets\\js\\query-builder.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\query-builder.min.js",
+      "PackagePath": "staticwebassets\\js\\query-builder.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\query-builder.min.js.map",
+      "PackagePath": "staticwebassets\\js\\query-builder.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\select2.full.js",
+      "PackagePath": "staticwebassets\\js\\select2.full.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\select2.full.min.js",
+      "PackagePath": "staticwebassets\\js\\select2.full.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\select2.full.min.js.map",
+      "PackagePath": "staticwebassets\\js\\select2.full.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\sweetalert2.all.js",
+      "PackagePath": "staticwebassets\\js\\sweetalert2.all.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\js\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tabulator.js",
+      "PackagePath": "staticwebassets\\js\\tabulator.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tabulator.js.map",
+      "PackagePath": "staticwebassets\\js\\tabulator.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tabulator.min.js",
+      "PackagePath": "staticwebassets\\js\\tabulator.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tabulator.min.js.map",
+      "PackagePath": "staticwebassets\\js\\tabulator.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tempus-dominus.js",
+      "PackagePath": "staticwebassets\\js\\tempus-dominus.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tempus-dominus.min.js",
+      "PackagePath": "staticwebassets\\js\\tempus-dominus.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tempus-dominus.min.js.map",
+      "PackagePath": "staticwebassets\\js\\tempus-dominus.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tippy-bundle.umd.js",
+      "PackagePath": "staticwebassets\\js\\tippy-bundle.umd.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tippy-bundle.umd.js.map",
+      "PackagePath": "staticwebassets\\js\\tippy-bundle.umd.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tippy-bundle.umd.min.js",
+      "PackagePath": "staticwebassets\\js\\tippy-bundle.umd.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\tippy-bundle.umd.min.js.map",
+      "PackagePath": "staticwebassets\\js\\tippy-bundle.umd.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\typeahead.jquery.js",
+      "PackagePath": "staticwebassets\\js\\typeahead.jquery.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\typeahead.jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\typeahead.jquery.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\typeahead.jquery.min.js.map",
+      "PackagePath": "staticwebassets\\js\\typeahead.jquery.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\userevent.js",
+      "PackagePath": "staticwebassets\\js\\userevent.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\userfn.js",
+      "PackagePath": "staticwebassets\\js\\userfn.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\userpriv.js",
+      "PackagePath": "staticwebassets\\js\\userpriv.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\userpriv.min.js",
+      "PackagePath": "staticwebassets\\js\\userpriv.min.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\js\\userpriv.min.js.map",
+      "PackagePath": "staticwebassets\\js\\userpriv.min.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\lang\\chatbot.en-US.xml",
+      "PackagePath": "staticwebassets\\lang\\chatbot.en-US.xml"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\lang\\english.en-US.xml",
+      "PackagePath": "staticwebassets\\lang\\english.en-US.xml"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\lang\\indonesian.id-ID.xml",
+      "PackagePath": "staticwebassets\\lang\\indonesian.id-ID.xml"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\lang\\languages.xml",
+      "PackagePath": "staticwebassets\\lang\\languages.xml"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\package-lock.json",
+      "PackagePath": "staticwebassets\\package-lock.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\package.json",
+      "PackagePath": "staticwebassets\\package.json"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\all.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\all.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\all.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\brands.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\brands.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\brands.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\fontawesome.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\regular.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\regular.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\regular.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\solid.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\solid.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\solid.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome-free\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\png-transparent-kalimantan-institute-of-technology-logo-full-universities-indonesia.png",
+      "PackagePath": "staticwebassets\\png-transparent-kalimantan-institute-of-technology-logo-full-universities-indonesia.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\pngwing.com (2).png",
+      "PackagePath": "staticwebassets\\pngwing.com (2).png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\swagger\\favicon-16x16.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\swagger\\favicon-32x32.png"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\index.css",
+      "PackagePath": "staticwebassets\\swagger\\index.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\index.html",
+      "PackagePath": "staticwebassets\\swagger\\index.html"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\oauth2-redirect.html",
+      "PackagePath": "staticwebassets\\swagger\\oauth2-redirect.html"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-initializer.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-initializer.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-bundle.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-bundle.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-bundle.js.map",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-bundle.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-es-bundle-core.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-es-bundle-core.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-es-bundle-core.js.map",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-es-bundle-core.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-es-bundle.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-es-bundle.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-es-bundle.js.map",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-es-bundle.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-standalone-preset.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-standalone-preset.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui-standalone-preset.js.map",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui-standalone-preset.js.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui.css",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui.css"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui.css.map",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui.css.map"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui.js"
+    },
+    {
+      "Id": "E:\\chatbot\\wwwroot\\swagger\\swagger-ui.js.map",
+      "PackagePath": "staticwebassets\\swagger\\swagger-ui.js.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ASPNETMaker2024.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ASPNETMaker2024.props",
+      "PackagePath": "build\\ASPNETMaker2024.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ASPNETMaker2024.props",
+      "PackagePath": "buildMultiTargeting\\ASPNETMaker2024.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ASPNETMaker2024.props",
+      "PackagePath": "buildTransitive\\ASPNETMaker2024.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

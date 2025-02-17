@@ -1,0 +1,30 @@
+<ew-language date="2024/12/14" id="en-US" author="e.World Technology Limited">
+  <project>
+    <phrase id="bodytitle" value="Chatbot" />
+    <phrase id="footertext" value="&amp;copy;2024 e.World Technology Limited. All rights reserved." />
+    <menu id="1">
+      <phrase id="menutext" value="Question" />
+    </menu>
+    <menu id="2">
+      <phrase id="menutext" value="Chatting" />
+    </menu>
+    <table id="question">
+      <phrase id="tblcaption" value="Question" />
+      <field id="id">
+        <phrase id="fldcaption" value="ID" />
+      </field>
+      <field id="question2">
+        <phrase id="fldcaption" value="Question" />
+      </field>
+      <field id="answer">
+        <phrase id="fldcaption" value="Answer" />
+      </field>
+      <field id="tag">
+        <phrase id="fldcaption" value="Tag" />
+      </field>
+    </table>
+    <table id="chatting">
+      <phrase id="tblcaption" value="Chatting" />
+    </table>
+  </project>
+</ew-language>

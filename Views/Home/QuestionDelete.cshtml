@@ -1,0 +1,111 @@
+@{
+    // View
+    View = this;
+
+    // Check action result
+    if (questionDelete.ActionResult is EmptyResult) // Terminate page
+        return;
+
+    // Layout
+    Layout = questionDelete.UseLayout ? "_Layout" : "";
+}
+<script>
+var currentTable = @Html.Raw(ConvertToJson(questionDelete.ToClientVar()));
+ew.deepAssign(ew.vars, { tables: { Question: currentTable } });
+var currentPageID = ew.PAGE_ID = "delete";
+var currentForm;
+var fQuestiondelete;
+loadjs.ready(["wrapper", "head"], function () {
+    let $ = jQuery;
+    let fields = currentTable.fields;
+
+    // Form object
+    let form = new ew.FormBuilder()
+        .setId("fQuestiondelete")
+        .setPageId("delete")
+        .build();
+    window[form.id] = form;
+    currentForm = form;
+    loadjs.done(form.id);
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+    // Write your client script here, no need to add script tags.
+});
+</script>
+@questionDelete.ShowPageHeader()
+@questionDelete.ShowMessages()
+<form name="fQuestiondelete" id="fQuestiondelete" class="ew-form ew-delete-form" action="@AppPath(CurrentPageName())" method="post" novalidate autocomplete="off">
+@if (CurrentPage?.CheckToken ?? false) {
+    <input type="hidden" name="@Config.TokenNameKey" value="@Config.TokenName"><!-- CSRF token name -->
+    @Html.AntiForgeryToken()
+}
+<input type="hidden" name="action" id="action" value="delete">
+@foreach (string key in questionDelete.RecordKeys) {
+<input type="hidden" name="key_m[]" value="@key">
+}
+<div class="card ew-card ew-grid @(questionDelete.TableGridClass)">
+<div class="card-body ew-grid-middle-panel @(questionDelete.TableContainerClass)" style="@(questionDelete.TableContainerStyle)">
+<table class="@(questionDelete.TableClass)">
+    <thead>
+    <tr class="ew-table-header">
+@if (questionDelete.Question2.Visible) { // questionDelete.Question2.Visible (begin)
+        <th class="@Html.Raw(questionDelete.Question2.HeaderCellClass)"><span id="elh_Question_Question2" class="Question_Question2">@Html.Raw(questionDelete.Question2.Caption)</span></th>
+} @* questionDelete.Question2.Visible (end) *@
+@if (questionDelete.Tag.Visible) { // questionDelete.Tag.Visible (begin)
+        <th class="@Html.Raw(questionDelete.Tag.HeaderCellClass)"><span id="elh_Question_Tag" class="Question_Tag">@Html.Raw(questionDelete.Tag.Caption)</span></th>
+} @* questionDelete.Tag.Visible (end) *@
+    </tr>
+    </thead>
+    <tbody>
+@{ questionDelete.RecordCount = 0; }
+@while (questionDelete.Recordset != null && await questionDelete.Recordset.ReadAsync()) { // DN
+    questionDelete.RecordCount++;
+    questionDelete.RowCount++;
+
+    // Set row properties
+    questionDelete.ResetAttributes();
+    questionDelete.RowType = RowType.View; // View
+
+    // Get the field contents
+    await questionDelete.LoadRowValues(questionDelete.Recordset);
+
+    // Render row
+    await questionDelete.RenderRow();
+    <tr @Html.Raw(questionDelete.RowAttributes)>
+@if (questionDelete.Question2.Visible) { // questionDelete.Question2.Visible (begin)
+        <td @Html.Raw(questionDelete.Question2.CellAttributes)>
+<span id="">
+<span @Html.Raw(questionDelete.Question2.ViewAttributes)>
+@Html.Raw(questionDelete.Question2.GetViewValue())</span>
+</span></td>
+} @* questionDelete.Question2.Visible (end) *@
+@if (questionDelete.Tag.Visible) { // questionDelete.Tag.Visible (begin)
+        <td @Html.Raw(questionDelete.Tag.CellAttributes)>
+<span id="">
+<span @Html.Raw(questionDelete.Tag.ViewAttributes)>
+@Html.Raw(questionDelete.Tag.GetViewValue())</span>
+</span></td>
+} @* questionDelete.Tag.Visible (end) *@
+    </tr>
+}
+@{ questionDelete.CloseRecordset(); }
+</tbody>
+</table>
+</div>
+</div>
+<div class="ew-buttons ew-desktop-buttons">
+<button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit">@Html.Raw(Language.Phrase("DeleteBtn"))</button>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-href="@AppPath(questionDelete.ReturnUrl)">@Html.Raw(Language.Phrase("CancelBtn"))</button>
+</div>
+</form>
+@questionDelete.ShowPageFooter()
+@Html.Raw(GetDebugMessage())
+@ElapsedTime()
+<script>
+loadjs.ready("load", function() {
+    // Write your table-specific startup script here
+    // document.write("page loaded");
+});
+</script>

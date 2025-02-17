@@ -1,0 +1,255 @@
+@{
+    // View
+    View = this;
+
+    // Check action result
+    if (questionList.ActionResult is EmptyResult) // Terminate page
+        return;
+
+    // Layout
+    Layout = questionList.UseLayout ? "_Layout" : "";
+}
+@if (!questionList.IsExport()) {
+<script>
+var currentTable = @Html.Raw(ConvertToJson(questionList.ToClientVar()));
+ew.deepAssign(ew.vars, { tables: { Question: currentTable } });
+var currentPageID = ew.PAGE_ID = "list";
+var currentForm;
+var @(questionList.FormName);
+loadjs.ready(["wrapper", "head"], function () {
+    let $ = jQuery;
+    let fields = currentTable.fields;
+
+    // Form object
+    let form = new ew.FormBuilder()
+        .setId("@(questionList.FormName)")
+        .setPageId("list")
+        .setSubmitWithFetch(@(questionList.UseAjaxActions ? "true" : "false"))
+        .setFormKeyCountName("@(questionList.FormKeyCountName)")
+        .build();
+    window[form.id] = form;
+    currentForm = form;
+    loadjs.done(form.id);
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+    // Write your client script here, no need to add script tags.
+});
+</script>
+}
+@if (!questionList.IsExport()) {
+<div class="btn-toolbar ew-toolbar">
+@if (questionList.TotalRecords > 0 && questionList.ExportOptions.Visible) {
+    questionList.ExportOptions.Render("body");
+}
+@if (questionList.ImportOptions.Visible) {
+    questionList.ImportOptions.Render("body");
+}
+@if (questionList.SearchOptions.Visible) {
+    questionList.SearchOptions.Render("body");
+}
+@if (questionList.FilterOptions.Visible) {
+    questionList.FilterOptions.Render("body");
+}
+</div>
+}
+@if (!questionList.IsModal) {
+<form name="fQuestionsrch" id="fQuestionsrch" class="ew-form ew-ext-search-form" action="@AppPath(CurrentPageName())" novalidate autocomplete="off">
+<div id="fQuestionsrch_search_panel" class="mb-2 mb-sm-0 @(questionList.SearchPanelClass)"><!-- .ew-search-panel -->
+<script>
+var currentTable = @Html.Raw(ConvertToJson(questionList.ToClientVar()));
+ew.deepAssign(ew.vars, { tables: { Question: currentTable } });
+var currentForm;
+var fQuestionsrch, currentSearchForm, currentAdvancedSearchForm;
+loadjs.ready(["wrapper", "head"], function () {
+    let $ = jQuery,
+        fields = currentTable.fields;
+
+    // Form object for search
+    let form = new ew.FormBuilder()
+        .setId("fQuestionsrch")
+        .setPageId("list")
+@if (questionList.UseAjaxActions) {
+        <text>.setSubmitWithFetch(true)</text>
+}
+
+        // Dynamic selection lists
+        .setLists({
+        })
+
+        // Filters
+        .setFilterList(@Html.Raw(questionList.GetFilterList()))
+        .build();
+    window[form.id] = form;
+    currentSearchForm = form;
+    loadjs.done(form.id);
+});
+</script>
+<input type="hidden" name="cmd" value="search">
+@if (Security.CanSearch) {
+if (!questionList.IsExport() && Empty(questionList.CurrentAction) && questionList.HasSearchFields()) { @* Show search form (begin) *@
+<div class="ew-extended-search container-fluid ps-2">
+<div class="row mb-0">
+    <div class="col-sm-auto px-0 pe-sm-2">
+        <div class="ew-basic-search input-group">
+            <input type="search" name="@(Config.TableBasicSearch)" id="@(Config.TableBasicSearch)" class="form-control ew-basic-search-keyword" value="@Html.Raw(HtmlEncode(questionList.BasicSearch.SessionKeyword))" placeholder="@(HtmlEncode(Language.Phrase("Search")))" aria-label="@(HtmlEncode(Language.Phrase("Search")))">
+            <input type="hidden" name="@(Config.TableBasicSearchType)" id="@(Config.TableBasicSearchType)" class="ew-basic-search-type" value="@(HtmlEncode(questionList.BasicSearch.SessionType))">
+            <button type="button" data-bs-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" aria-haspopup="true" aria-expanded="false">
+                <span id="searchtype">@Html.Raw(questionList.BasicSearch.TypeNameShort)</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+                <button type="button" class="dropdown-item@(questionList.BasicSearch.SessionType == "" ? " active" : "")" form="fQuestionsrch" data-ew-action="search-type">@Html.Raw(Language.Phrase("QuickSearchAuto"))</button>
+                <button type="button" class="dropdown-item@(questionList.BasicSearch.SessionType == "=" ? " active" : "")" form="fQuestionsrch" data-ew-action="search-type" data-search-type="=">@Html.Raw(Language.Phrase("QuickSearchExact"))</button>
+                <button type="button" class="dropdown-item@(questionList.BasicSearch.SessionType == "AND" ? " active" : "")" form="fQuestionsrch" data-ew-action="search-type" data-search-type="AND">@Html.Raw(Language.Phrase("QuickSearchAll"))</button>
+                <button type="button" class="dropdown-item@(questionList.BasicSearch.SessionType == "OR" ? " active" : "")" form="fQuestionsrch" data-ew-action="search-type" data-search-type="OR">@Html.Raw(Language.Phrase("QuickSearchAny"))</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-auto mb-3">
+        <button class="btn btn-primary" name="btn-submit" id="btn-submit" type="submit">@Html.Raw(Language.Phrase("SearchBtn"))</button>
+    </div>
+</div>
+</div><!-- /.ew-extended-search -->
+} @* Show search form (end) *@
+}
+</div><!-- /.ew-search-panel -->
+</form>
+}
+@questionList.ShowPageHeader()
+@questionList.ShowMessages()
+<main class="list @(questionList.TotalRecords == 0 && !questionList.IsAdd ? " ew-no-record" : "")">
+<div id="ew-header-options">
+    @questionList.HeaderOptions.RenderBody()
+</div>
+<div id="ew-list">
+@if (questionList.TotalRecords > 0 || !Empty(questionList.CurrentAction)) {
+<div class="card ew-card ew-grid@(questionList.IsAddOrEdit ? " ew-grid-add-edit" : "") @(questionList.TableGridClass)">
+<form name="@(questionList.FormName)" id="@(questionList.FormName)" class="ew-form ew-list-form" action="@AppPath(questionList.PageName)" method="post" novalidate autocomplete="off">
+@if (CurrentPage?.CheckToken ?? false) {
+    <input type="hidden" name="@Config.TokenNameKey" value="@Config.TokenName"><!-- CSRF token name -->
+    @Html.AntiForgeryToken()
+}
+@if (questionList.IsModal) {
+<input type="hidden" name="modal" value="1">
+}
+<div id="gmp_Question" class="card-body ew-grid-middle-panel @(questionList.TableContainerClass)" style="@(questionList.TableContainerStyle)">
+@if (questionList.TotalRecords > 0 || questionList.IsGridEdit || questionList.IsMultiEdit) {
+<table id="tbl_Questionlist" class="@(questionList.TableClass)"><!-- .ew-table -->
+<thead>
+    <tr class="ew-table-header">
+@{
+    // Header row
+    questionList.RowType = RowType.Header;
+
+    // Render list options
+    await questionList.RenderListOptions();
+}
+@* Render list options (header, left) *@
+@questionList.ListOptions.RenderHeader("left")
+@if (questionList.Question2.Visible) { // questionList.Question2.Visible (begin)
+        <th data-name="Question2" class="@(questionList.Question2.HeaderCellClass)"><div id="elh_Question_Question2" class="Question_Question2">@Html.Raw(questionList.RenderFieldHeader(questionList.Question2))</div></th>
+} @* questionList.Question2.Visible (end) *@
+@if (questionList.Tag.Visible) { // questionList.Tag.Visible (begin)
+        <th data-name="Tag" class="@(questionList.Tag.HeaderCellClass)"><div id="elh_Question_Tag" class="Question_Tag">@Html.Raw(questionList.RenderFieldHeader(questionList.Tag))</div></th>
+} @* questionList.Tag.Visible (end) *@
+@* Render list options (header, right) *@
+@questionList.ListOptions.RenderHeader("right")
+    </tr>
+</thead>
+<tbody data-page="@(questionList.PageNumber)">
+@{
+    await questionList.SetupGrid();
+    bool eof = questionList.Recordset == null; // DN
+}
+@while (questionList.RecordCount < questionList.StopRecord || SameString(questionList.RowIndex, "$rowindex$")) { // Begin While
+    if (!eof && !SameString(questionList.RowIndex, "$rowindex$") &&
+        (!questionList.IsGridAdd || questionList.CurrentMode == "copy") &&
+        (!((questionList.IsCopy || questionList.IsAdd) && questionList.RowIndex is int rowIndex && rowIndex == 0))) // DN
+        eof = !await questionList.Recordset.ReadAsync();
+    questionList.RecordCount++;
+    if (questionList.RecordCount >= questionList.StartRecord) {
+        await questionList.SetupRow();
+    <tr @Html.Raw(questionList.RowAttributes)>
+    @* Render list options (body, left) *@
+    @questionList.ListOptions.RenderBody("left", questionList.RowCount)
+    @if (questionList.Question2.Visible) { // questionList.Question2.Visible (begin)
+        <td data-name="Question2" @Html.Raw(questionList.Question2.CellAttributes)>
+<span id="el@(questionList.RowIndex == "$rowindex$" ? "$rowindex$" : questionList.RowCount)_Question_Question2" class="el_Question_Question2">
+<span @Html.Raw(questionList.Question2.ViewAttributes)>
+@Html.Raw(questionList.Question2.GetViewValue())</span>
+</span>
+</td>
+    } @* questionList.Question2.Visible (end) *@
+    @if (questionList.Tag.Visible) { // questionList.Tag.Visible (begin)
+        <td data-name="Tag" @Html.Raw(questionList.Tag.CellAttributes)>
+<span id="el@(questionList.RowIndex == "$rowindex$" ? "$rowindex$" : questionList.RowCount)_Question_Tag" class="el_Question_Tag">
+<span @Html.Raw(questionList.Tag.ViewAttributes)>
+@Html.Raw(questionList.Tag.GetViewValue())</span>
+</span>
+</td>
+    } @* questionList.Tag.Visible (end) *@
+    @* Render list options (body, right) *@
+    @questionList.ListOptions.RenderBody("right", questionList.RowCount)
+    </tr>
+    } @* End if *@
+
+    // Reset for template row
+    if (SameString(questionList.RowIndex, "$rowindex$"))
+        questionList.RowIndex = 0;
+
+    // Reset inline add/copy row
+    if ((questionList.IsCopy || questionList.IsAdd) && questionList.RowIndex is int rowIndex2 && rowIndex2 == 0)
+        questionList.RowIndex = 1;
+} @* End While *@
+</tbody>
+</table><!-- /.ew-table -->
+} @* End If TotalRecords > 0 *@
+</div><!-- /.ew-grid-middle-panel -->
+@if (Empty(questionList.CurrentAction) && !questionList.UseAjaxActions) {
+<input type="hidden" name="action" id="action" value="">
+}
+</form><!-- /.ew-list-form -->
+@{ questionList.CloseRecordset(); }
+@if (!questionList.IsExport()) {
+<div class="card-footer ew-grid-lower-panel">
+@if (!questionList.IsGridAdd && !(questionList.IsGridEdit && questionList.ModalGridEdit) && !questionList.IsMultiEdit) {
+@Html.Raw(questionList.Pager.Render())
+}
+<div class="ew-list-other-options">
+@questionList.OtherOptions.RenderBody("bottom")
+</div>
+</div>
+}
+</div><!-- /.ew-grid -->
+} else { // Show other options
+<div class="ew-list-other-options">
+@questionList.OtherOptions.ForEach(opt => opt.ButtonClass = "").RenderBody()
+</div>
+}
+</div>
+<div id="ew-footer-options">
+    @questionList.FooterOptions.RenderBody()
+</div>
+</main>
+@questionList.ShowPageFooter()
+@Html.Raw(GetDebugMessage())
+@ElapsedTime()
+@if (!questionList.IsExport()) {
+<script>
+// Field event handlers
+loadjs.ready("head", function() {
+    ew.addEventHandlers("Question");
+});
+</script>
+<script>
+loadjs.ready("load", function() {
+    // Write your table-specific startup script here
+    // document.write("page loaded");
+});
+document.querySelectorAll('.ew-list-other-options').forEach(element => {
+    element.style.display = 'none';
+});
+
+</script>
+}
